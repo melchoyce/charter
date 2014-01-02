@@ -218,8 +218,6 @@ h1, h2, h3, h4, h5, h6 {
 h1.site-title {
   display: inline-block;
   padding: 0.5em 1.5em;
-  background-color: white;
-  border: 5px solid #333;
   font-size: 26px;
   font-size: 2.6rem;
   font-weight: bold;
