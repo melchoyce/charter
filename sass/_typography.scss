@@ -93,7 +93,7 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 $vspacing;
+	margin: $vspacing 0;
 	padding: $vspacing;
 	border: 3px solid lighten($base-color, 30%);
 	font-style: italic;

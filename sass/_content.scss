@@ -18,11 +18,10 @@
 .entry-meta {
 	margin-top: $vspacing*2;
 }
-.page-content p,
-.entry-content p,
-.entry-content blockquote,
-.entry-summary p,
-.entry-meta p {
+.page-content,
+.entry-content,
+.entry-summary,
+.entry-meta {
 	margin: $vspacing auto 0;
 	max-width: 70%;
 }

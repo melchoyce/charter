@@ -299,7 +299,7 @@ dfn, cite, em, i {
 }
 
 blockquote {
-  margin: 0 1.5em;
+  margin: 1.5em 0;
   padding: 1.5em;
   border: 3px solid gray;
   font-style: italic;
@@ -705,11 +705,10 @@ textarea {
   margin-top: 3em;
 }
 
-.page-content p,
-.entry-content p,
-.entry-content blockquote,
-.entry-summary p,
-.entry-meta p {
+.page-content,
+.entry-content,
+.entry-summary,
+.entry-meta {
   margin: 1.5em auto 0;
   max-width: 70%;
 }
