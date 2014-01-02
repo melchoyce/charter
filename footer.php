@@ -16,7 +16,7 @@
 			<?php do_action( 'charter_credits' ); ?>
 			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'charter' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'charter' ), 'charter', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+			<?php printf( __( 'Built by %1$s.', 'charter' ), '<a href="http://choycedesign.com" rel="designer">Mel Choyce</a> using <a href="http://underscores.me/">Underscores.me</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

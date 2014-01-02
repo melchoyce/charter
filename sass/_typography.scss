@@ -5,9 +5,9 @@ select,
 textarea {
 	color: $text-color;
 	font-family: $base-font;
-	font-size: 16px;
-	font-size: 1.6rem;
-	line-height: 1.5;
+	font-size: 18px;
+	font-size: 1.8rem;
+	line-height: 1.7;
 }
 
 /* Headings */
@@ -15,28 +15,39 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: $header-font;
 	clear: both;
 }
-h1.site-title {
-	display: inline-block;
-	padding: $vspacing/3 $vspacing;
-	font-size: 26px;
-	font-size: 2.6rem;
-	font-weight: bold;
-	text-transform: uppercase;
-
-	a {
-		color: #333;
-		
-		&:hover {
-			text-decoration: none;
+h1 {
+	&.site-title {
+		display: inline-block;
+		padding: $vspacing/3 $vspacing;
+		border: 5px solid $base-color;
+		font-size: 26px;
+		font-size: 2.6rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	
+		a {
+			color: $base-color;
+			
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
-}
-h1.widget-title {
-	margin-bottom: $vspacing;
-	font-size: 12px;
-	font-size: 1.3rem;
-	font-weight: bold;
-	text-transform: uppercase;
+	&.entry-title {
+		margin: $vspacing/2 0 $vspacing/1.5;
+		text-align: center;
+		font-size: 36px;
+		font-size: 3.6rem;
+		font-weight: bold;
+		letter-spacing: -.05em;
+	}	
+	&.widget-title {
+		margin-bottom: $vspacing;
+		font-size: 12px;
+		font-size: 1.3rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
 }
 h2 {
 	font-size: 24px;
@@ -52,6 +63,7 @@ hr {
 
 /* Text elements */
 p {
+	line-height: 2;
 	margin-bottom: $vspacing;
 }
 ul, ol {
@@ -82,6 +94,10 @@ dfn, cite, em, i {
 }
 blockquote {
 	margin: 0 $vspacing;
+	padding: $vspacing;
+	border: 3px solid lighten($base-color, 30%);
+	font-style: italic;
+	color: lighten($base-color, 30%);
 }
 address {
 	margin: 0 0 $vspacing;
@@ -101,7 +117,7 @@ code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 abbr, acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted lighten($base-color, 20%);
 	cursor: help;
 }
 mark, ins {
@@ -155,4 +171,15 @@ a {
 }
 a:visited {
 	color: $link-visited;
+}
+
+/* Specific type styles */
+
+.entry-meta,
+.nav-links {
+	font-family: $header-font;
+	font-size: 12px;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	color: lighten($base-color, 20%);
 }

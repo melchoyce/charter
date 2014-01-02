@@ -15,10 +15,26 @@
 		display: inline;
 	}
 }
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: $vspacing 0 0;
+.entry-meta {
+	margin-top: $vspacing*2;
+}
+.page-content p,
+.entry-content p,
+.entry-content blockquote,
+.entry-summary p,
+.entry-meta p {
+	margin: $vspacing auto 0;
+	max-width: 70%;
+}
+.page-content p img,
+.entry-content p img,
+.entry-summary p img,
+.entry-meta p img {
+	max-width: 100%;
+}
+.entry-content blockquote p {
+	max-width: 100%;
+	margin: 0;
 }
 .page-links {
 	clear: both;

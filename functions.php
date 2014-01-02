@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 1000; /* pixels */
 }
 
 if ( ! function_exists( 'charter_setup' ) ) :
@@ -46,7 +46,7 @@ function charter_setup() {
 	) );
 
 	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	// add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'charter_custom_background_args', array(
@@ -95,7 +95,7 @@ add_action( 'wp_enqueue_scripts', 'charter_scripts' );
  * The use of Source Sans Pro by default is localized. For languages
  * that use characters not supported by the font, the font can be disabled.
  *
- * @since Flounder 1.0
+ * @since Charter 1.0
  *
  * @return string Font stylesheet or empty string if disabled.
  */

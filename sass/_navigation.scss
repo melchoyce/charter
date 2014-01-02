@@ -3,18 +3,24 @@
 
 .site-main [class*="navigation"] {
 	clear: both;
-	margin: 0 0 $vspacing;
 	overflow: hidden;
+	margin: 0 auto $vspacing;
 
-	.nav-previous {
+	.nav-links a[rel="prev"] {
 		float: left;
 		width: 50%;
 	}
 
-	.nav-next {
+	.nav-links a[rel="next"] {
 		float: right;
 		text-align: right;
 		width: 50%;
 	}
 
+}
+
+.site-main article [class*="navigation"] {
+	padding: $vspacing/2;
+	max-width: 70%;
+	background-color: lighten($base-color, 78%);
 }

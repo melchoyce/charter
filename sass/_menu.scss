@@ -35,7 +35,10 @@
 		}
 
 		.current_page_item, .current-menu-item {
-			a {}
+			a {
+				font-weight: bold;
+				color: $highlight-color;
+			}
 		}
 
 		// second level

@@ -13,18 +13,21 @@
 }
 // Image Captions
 .wp-caption {
-	border: 1px solid #ccc;
 	margin-bottom: $vspacing;
 	max-width: 100%;
+	border: none;
 
 	img[class*="wp-image-"] {
 		display: block;
-		margin: 1.2% auto 0;
-		max-width: 98%;
+		margin: $vspacing auto 0;
+		max-width: 100%;
 	}
 	.wp-caption-text {
-		text-align: center;
-		margin: 0.8075em 0;
+		margin: $vspacing/3 0 $vspacing;
+		text-align: left;
+		font-size: 14px;
+		font-size: 1.4rem;
+		font-style: italic;
 	}
 }
 
@@ -33,7 +36,11 @@
 
 	@extend %clearfix;
 
-	margin-bottom: $vspacing;
+	margin: $vspacing auto 0 !important;
+	
+	&+ p {
+		margin-top: 0;
+	}
 
 	.gallery-item {
 		float: left;
@@ -42,15 +49,18 @@
 			a { display: block; }
 
 			img {
-				border: none;
+				border: none !important;
 				height: auto;
 				margin-bottom: 0;
 			}
 		}
 
 		.gallery-caption {
-			margin: 0;
+			margin: $vspacing/3 0 $vspacing;
 			text-align: center;
+			font-size: 14px;
+			font-size: 1.4rem;
+			font-style: italic;
 		}
 
 	}
