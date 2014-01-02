@@ -15,6 +15,36 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: $header-font;
 	clear: both;
 }
+h1.site-title {
+	display: inline-block;
+	padding: $vspacing/3 $vspacing;
+	background-color: white;
+	border: 5px solid #333;
+	font-size: 26px;
+	font-size: 2.6rem;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	a {
+		color: #333;
+		
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+h1.widget-title {
+	margin-bottom: $vspacing;
+	font-size: 12px;
+	font-size: 1.3rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+h2 {
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -27,7 +57,7 @@ p {
 	margin-bottom: $vspacing;
 }
 ul, ol {
-	margin: 0 0 $vspacing 3em;
+	margin: 0;
 }
 ul {
 	list-style: disc;
@@ -119,6 +149,11 @@ img {
 a {
 	color: $link-color;
 	@include hoverActiveFocus(color, darken($link-color, 30%));
+	text-decoration: none;
+	
+	&:hover {
+		text-decoration: underline;
+	}
 }
 a:visited {
 	color: $link-visited;

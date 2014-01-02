@@ -1,8 +1,8 @@
 <?php
 /**
- * traverse functions and definitions
+ * charterfunctions and definitions
  *
- * @package traverse
+ * @package charter
  */
 
 /**
@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'traverse_setup' ) ) :
+if ( ! function_exists( 'charter_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,15 +20,15 @@ if ( ! function_exists( 'traverse_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function traverse_setup() {
+function charter_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on traverse, use a find and replace
-	 * to change 'traverse' to the name of your theme in all the template files
+	 * If you're building a theme based on charter, use a find and replace
+	 * to change 'charter' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'traverse', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'charter', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -38,31 +38,31 @@ function traverse_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'traverse' ),
+		'primary' => __( 'Primary Menu', 'charter' ),
 	) );
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'traverse_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'charter_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
-endif; // traverse_setup
-add_action( 'after_setup_theme', 'traverse_setup' );
+endif; // charter_setup
+add_action( 'after_setup_theme', 'charter_setup' );
 
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
-function traverse_widgets_init() {
+function charter_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'traverse' ),
+		'name'          => __( 'Sidebar', 'charter' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -70,23 +70,74 @@ function traverse_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
-add_action( 'widgets_init', 'traverse_widgets_init' );
+add_action( 'widgets_init', 'charter_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function traverse_scripts() {
-	wp_enqueue_style( 'traverse-style', get_stylesheet_uri() );
+function charter_scripts() {
+	wp_enqueue_style( 'charter-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'traverse-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'charter-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'traverse-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'charter-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'traverse_scripts' );
+add_action( 'wp_enqueue_scripts', 'charter_scripts' );
+
+
+/**
+ * Returns the Google font stylesheet URL, if available.
+ *
+ * The use of Source Sans Pro by default is localized. For languages
+ * that use characters not supported by the font, the font can be disabled.
+ *
+ * @since Flounder 1.0
+ *
+ * @return string Font stylesheet or empty string if disabled.
+ */
+function charter_fonts_url() {
+	$fonts_url = '';
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Noto Sans or Serif, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$noto_serif = _x( 'on', 'Source Sans Pro font: on or off', 'charter' );
+
+	if ( 'off' !== $noto_serif ) {
+		$font_families = array();
+
+		if ( 'off' !== $noto_serif )
+			$font_families[] = 'Noto+Serif:400,700,400italic,700italic';
+
+		$protocol = is_ssl() ? 'https' : 'http';
+		$query_args = array(
+			'family' => implode( '|', $font_families ),
+			'subset' => 'latin,latin-ext',
+		);
+		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
+	}
+	
+	if ( 'off' !== $noto_sans ) {
+		$font_families = array();
+
+		if ( 'off' !== $noto_sans )
+			$font_families[] = 'Noto+Sans:400,700';
+
+		$protocol = is_ssl() ? 'https' : 'http';
+		$query_args = array(
+			'family' => implode( '|', $font_families ),
+			'subset' => 'latin,latin-ext',
+		);
+		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
+	}
+
+	return $fonts_url;
+}
 
 /**
  * Implement the Custom Header feature.

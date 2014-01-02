@@ -1,40 +1,102 @@
-// Layout: Content-Sidebar
-@if $layout == content-sidebar {
-	.content-area {
+/* Global layout settings */
+
+.site-branding,
+.main-navigation .nav-menu,
+.content-area,
+.site-footer .site-info,
+.widget-container .widget-area {
+	clear: both;
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.site-footer,
+.widget-container {
+	clear: both;
+	width: 100%;
+}
+
+/* Specific layout settings */
+
+.site-header {
+	clear: both;
+	padding: $vspacing*2 0;
+	background-color: #f9f9f9;
+	text-align: center;
+}
+
+.widget-container {
+	padding: $vspacing*2 0;
+	background-color: #444;
+	font-family: $header-font;
+	color: white;
+	overflow: hidden;
+
+	.widget-area .widget {
 		float: left;
-		margin: 0 -25% 0 0;
-		width: 100%;
+		margin: 0 4% 4% 0;
+		width: 48%;
+		font-size: 14px;
+		font-size: 1.4rem;
+		
+		&:nth-of-type(even) {
+			margin-right: 0;
+		}
 	}
-	.site-main {
-		margin: 0 25% 0 0;
+	
+	a {
+		color: #b0d6f2;
 	}
-	.site-content .widget-area { /* Sidebar 1 */
-		float: right;
-		overflow: hidden;
-		width: 25%;
+
+}
+
+.site-footer {
+	padding: $vspacing 0;
+	background-color: #333;
+	font-family: $header-font;
+	font-size: 14px;
+	font-size: 1.4rem;
+	color: white;
+	
+	.site-info {
+		text-align: center;
+	}
+	
+	a {
+		color: #b0d6f2;
 	}
 }
 
-// Layout: Sidebar-Content
-@else if $layout == sidebar-content {
-	.content-area {
-		float: right;
-		margin: 0 0 0 -25%;
-		width: 100%;
-	}
-	.site-main {
-		margin: 0 0 0 25%;
-	}
-	.site-content .widget-area { /* Sidebar 1 */
-		float: left;
-		overflow: hidden;
-		width: 25%;
-	}
+/* Homepage */
+
+.content-area {
+	padding: $vspacing*2 0;
+	clear: both;
 }
 
-@if $layout != null {
-	.site-footer {
-		clear: both;
-		width: 100%;
+.post-thumbnail {
+	float: left;
+	position: relative;
+	margin: 0 4% 4% 0;
+	width: 48%;
+	height: 300px;
+	background: #666;
+	background-size: 100% 100%;
+	
+	&:nth-of-type(even) {
+		margin-right: 0;
 	}
+	
+	.post-title {
+		position: absolute;
+		bottom: 0;
+		padding: $vspacing/3 0;
+		width: 100%;
+		background-color: rgba(0,0,0,.5);
+		font-family: $base-font;
+		color: white;
+		text-align: center;
+		text-shadow: 0 2px 0 rgba(0,0,0,.5);
+	}
+
 }

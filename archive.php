@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package traverse
+ * @package charter
  */
 
 get_header(); ?>
@@ -24,46 +24,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'traverse' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'charter' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'traverse' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'charter' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'traverse' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'traverse' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'charter' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'charter' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'traverse' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'traverse' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'charter' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'charter' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'traverse' );
+							_e( 'Asides', 'charter' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'traverse');
+							_e( 'Galleries', 'charter');
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'traverse');
+							_e( 'Images', 'charter');
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'traverse' );
+							_e( 'Videos', 'charter' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'traverse' );
+							_e( 'Quotes', 'charter' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'traverse' );
+							_e( 'Links', 'charter' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'traverse' );
+							_e( 'Statuses', 'charter' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'traverse' );
+							_e( 'Audios', 'charter' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'traverse' );
+							_e( 'Chats', 'charter' );
 
 						else :
-							_e( 'Archives', 'traverse' );
+							_e( 'Archives', 'charter' );
 
 						endif;
 					?>
@@ -90,7 +90,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php traverse_paging_nav(); ?>
+			<?php charter_paging_nav(); ?>
 
 		<?php else : ?>
 

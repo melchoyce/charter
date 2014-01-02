@@ -3,16 +3,14 @@
 // yourself. This means that changes that should be small, such as tweaking the
 // coloring or the sizing, can be done in one place, not all over the stylesheet.
 
-$base-font: sans-serif;
-$header-font: $base-font; // you can refer to other variables
+$base-font: 'Noto Serif', serif;
+$header-font: 'Noto Sans', sans-serif;
 
 // base color scheme
 $body-background: #fff;
-$text-color: #404040;
-$link-color: royalblue;
-$link-visited: purple;
+$text-color: #222;
+$link-color: #317bb0;
+$link-visited: darken(#317bb0, 20%);
 
 // Supported Values for $layout:
-//  null | content-sidebar | sidebar-content
-$layout: null !default;
 $vspacing: 1.5em;

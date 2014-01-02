@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package traverse
+ * @package charter
  */
 
 get_header(); ?>
@@ -21,21 +21,25 @@ get_header(); ?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				<?php 
+					/**
+					 * Set up homepage post thumbnails using featured images
 					 */
-					get_template_part( 'content', get_post_format() );
+					 
+					$post_thumbnail_background = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' ); 
 				?>
+				
+				<a class="post-thumbnail" href="<?php echo get_permalink(); ?>" style="background-image: url('<?php echo $post_thumbnail_background[0]; ?>');">
+					<h2 class="post-title"><?php the_title(); ?></h2>
+				</a>
 
 			<?php endwhile; ?>
 
-			<?php traverse_paging_nav(); ?>
+			<?php charter_paging_nav(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<h2>Nothing</h2>
 
 		<?php endif; ?>
 
