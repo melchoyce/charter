@@ -713,10 +713,10 @@ textarea {
   max-width: 70%;
 }
 
-.page-content p img,
-.entry-content p img,
-.entry-summary p img,
-.entry-meta p img {
+.page-content img,
+.entry-content img,
+.entry-summary img,
+.entry-meta img {
   max-width: 100%;
 }
 
