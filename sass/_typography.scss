@@ -5,8 +5,7 @@ select,
 textarea {
 	color: $text-color;
 	font-family: $base-font;
-	font-size: 18px;
-	font-size: 1.8rem;
+	@include font-size(18);
 	line-height: 1.7;
 }
 
@@ -20,8 +19,7 @@ h1 {
 		display: inline-block;
 		padding: $vspacing/3 $vspacing;
 		border: 5px solid $base-color;
-		font-size: 26px;
-		font-size: 2.6rem;
+		@include font-size(26);
 		font-weight: bold;
 		text-transform: uppercase;
 	
@@ -36,22 +34,19 @@ h1 {
 	&.entry-title {
 		margin: $vspacing/2 0 $vspacing/1.5;
 		text-align: center;
-		font-size: 36px;
-		font-size: 3.6rem;
+		@include font-size(36);
 		font-weight: bold;
 		letter-spacing: -.05em;
 	}	
 	&.widget-title {
 		margin-bottom: $vspacing;
-		font-size: 12px;
-		font-size: 1.3rem;
+		@include font-size(13);
 		font-weight: bold;
 		text-transform: uppercase;
 	}
 }
 h2 {
-	font-size: 24px;
-	font-size: 2.4rem;
+	@include font-size(24);
 }
 
 hr {
@@ -105,8 +100,7 @@ address {
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 1.5rem;
+	@include font-size(15);
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	padding: 1.6em;
@@ -178,8 +172,7 @@ a:visited {
 .entry-meta,
 .nav-links {
 	font-family: $header-font;
-	font-size: 12px;
-	font-size: 1.2rem;
+	@include font-size(12);
 	text-transform: uppercase;
 	color: lighten($base-color, 20%);
 }

@@ -25,8 +25,7 @@
 	.wp-caption-text {
 		margin: $vspacing/3 0 $vspacing;
 		text-align: left;
-		font-size: 14px;
-		font-size: 1.4rem;
+		@include font-size(14);
 		font-style: italic;
 	}
 }
@@ -58,8 +57,7 @@
 		.gallery-caption {
 			margin: $vspacing/3 0 $vspacing;
 			text-align: center;
-			font-size: 14px;
-			font-size: 1.4rem;
+			@include font-size(14);
 			font-style: italic;
 		}
 

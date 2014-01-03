@@ -36,8 +36,7 @@
 		float: left;
 		margin: 0 4% 4% 0;
 		width: 48%;
-		font-size: 14px;
-		font-size: 1.4rem;
+		@include font-size(14);
 		
 		&:nth-of-type(even) {
 			margin-right: 0;
@@ -54,8 +53,7 @@
 	padding: $vspacing 0;
 	background-color: $base-color;
 	font-family: $header-font;
-	font-size: 14px;
-	font-size: 1.4rem;
+	@include font-size(14);
 	color: white;
 	
 	.site-info {

@@ -42,7 +42,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 100%;
   /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
   overflow-y: scroll;
   /* Keeps page centred in all browsers regardless of content height */
@@ -205,7 +205,7 @@ textarea {
   color: #1a1a1a;
   font-family: "Noto Serif", serif;
   font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   line-height: 1.7;
 }
 
@@ -220,7 +220,7 @@ h1.site-title {
   padding: 0.5em 1.5em;
   border: 5px solid #333333;
   font-size: 26px;
-  font-size: 2.6rem;
+  font-size: 1.625rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -234,21 +234,21 @@ h1.entry-title {
   margin: 0.75em 0 1em;
   text-align: center;
   font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 2.25rem;
   font-weight: bold;
   letter-spacing: -.05em;
 }
 h1.widget-title {
   margin-bottom: 1.5em;
-  font-size: 12px;
-  font-size: 1.3rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 h2 {
   font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 1.5rem;
 }
 
 hr {
@@ -314,7 +314,7 @@ pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
-  font-size: 1.5rem;
+  font-size: 0.9375rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   padding: 1.6em;
@@ -402,7 +402,7 @@ a:visited {
 .nav-links {
   font-family: "Noto Sans", sans-serif;
   font-size: 12px;
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   color: #666666;
 }
@@ -436,7 +436,7 @@ input[type="submit"] {
   -webkit-appearance: button;
   /* Corrects inability to style clickable 'input' types in iOS */
   font-size: 12px;
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   line-height: 1;
   padding: .6em 1em .4em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -563,7 +563,7 @@ textarea {
   margin: 0 4% 4% 0;
   width: 48%;
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
 }
 .widget-container .widget-area .widget:nth-of-type(even) {
   margin-right: 0;
@@ -577,7 +577,7 @@ textarea {
   background-color: #333333;
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   color: white;
 }
 .site-footer .site-info {
@@ -642,7 +642,7 @@ textarea {
   color: white;
   font-family: "Noto Sans", sans-serif;
   font-size: 12px;
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 .main-navigation ul li:hover > ul {
@@ -766,7 +766,7 @@ textarea {
   margin: 0.5em 0 1.5em;
   text-align: left;
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   font-style: italic;
 }
 
@@ -791,7 +791,7 @@ textarea {
   margin: 0.5em 0 1.5em;
   text-align: center;
   font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   font-style: italic;
 }
 

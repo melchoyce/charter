@@ -45,6 +45,12 @@ function charter_setup() {
 		'primary' => __( 'Primary Menu', 'charter' ),
 	) );
 
+	/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, icons, and column width.
+	 */
+	add_editor_style( array( 'css/editor-style.css', charter_fonts_url() ) );
+
 	// Enable support for Post Formats.
 	// add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
@@ -82,6 +88,9 @@ function charter_scripts() {
 
 	wp_enqueue_script( 'charter-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
+	// Add Noto Sans & Noto Serif
+	wp_enqueue_style( 'charter-fonts', charter_fonts_url(), array(), null );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -103,37 +112,31 @@ function charter_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	 * supported by Noto Sans or Serif, translate this to 'off'. Do not translate
+	 * supported by Noto Serif, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$noto_serif = _x( 'on', 'Source Sans Pro font: on or off', 'charter' );
+	$noto_serif = _x( 'on', 'Noto Serif font: on or off', 'charter' );
 
-	if ( 'off' !== $noto_serif ) {
+	/* Translators: If there are characters in your language that are not
+	 * supported by Noto Sans, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$noto_sans = _x( 'on', 'Noto Sans font: on or off', 'charter' );
+
+	if ( 'off' !== $noto_serif || 'off' !== $noto_sans ) {
 		$font_families = array();
 
 		if ( 'off' !== $noto_serif )
-			$font_families[] = 'Noto+Serif:400,700,400italic,700italic';
-
-		$protocol = is_ssl() ? 'https' : 'http';
-		$query_args = array(
-			'family' => implode( '|', $font_families ),
-			'subset' => 'latin,latin-ext',
-		);
-		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
-	}
-	
-	if ( 'off' !== $noto_sans ) {
-		$font_families = array();
+			$font_families[] = 'Noto Serif:400,700,400italic,700italic';
 
 		if ( 'off' !== $noto_sans )
-			$font_families[] = 'Noto+Sans:400,700';
+			$font_families[] = 'Noto Sans:400,700';
 
-		$protocol = is_ssl() ? 'https' : 'http';
 		$query_args = array(
-			'family' => implode( '|', $font_families ),
-			'subset' => 'latin,latin-ext',
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
+		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
 	}
 
 	return $fonts_url;

@@ -13,3 +13,10 @@
         #{$property}: $value;
     }
 }
+
+@mixin font-size( $size-value ) {
+	$rem-value: ( $size-value / 16 );
+	$px-value: $size-value;
+	font-size: $px-value * 1px; 
+	font-size: $rem-value * 1rem;
+}
