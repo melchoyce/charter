@@ -1,40 +1,46 @@
 /* =Content
 ----------------------------------------------- */
 
-.sticky {
-}
+.sticky {}
+
 .hentry {
 	margin: 0 0 $vspacing;
 }
+
 .byline,
 .updated {
 	display: none;
 }
+
 .single, .group-blog {
 	.byline {
 		display: inline;
 	}
 }
+
 .entry-meta {
 	margin-top: $vspacing*2;
 }
+
 .page-content,
 .entry-content,
 .entry-summary,
 .entry-meta {
-	margin: $vspacing auto 0;
-	max-width: 70%;
+	margin: $vspacing 15% 0;
+
+	.size-large,
+	.size-full {
+		$ratio: (150/700); // 700px is the default width of the container
+		margin-left: -100% * $ratio;
+		margin-right: -100% * $ratio;
+		max-width: 100% + 200 * $ratio;
+	}
+
+	blockquote p:last-of-type {
+		margin-bottom: 0;
+	}
 }
-.page-content img,
-.entry-content img,
-.entry-summary img,
-.entry-meta img {
-	max-width: 100%;
-}
-.entry-content blockquote p {
-	max-width: 100%;
-	margin: 0;
-}
+
 .page-links {
 	clear: both;
 	margin: 0 0 $vspacing;
