@@ -301,9 +301,9 @@ dfn, cite, em, i {
 blockquote {
   margin: 1.5em 0;
   padding: 1.5em;
-  border: 3px solid gray;
+  border: 3px solid grey;
   font-style: italic;
-  color: gray;
+  color: grey;
 }
 
 address {
@@ -709,20 +709,25 @@ textarea {
 .entry-content,
 .entry-summary,
 .entry-meta {
-  margin: 1.5em auto 0;
-  max-width: 70%;
+  margin: 1.5em 15% 0;
 }
-
-.page-content img,
-.entry-content img,
-.entry-summary img,
-.entry-meta img {
-  max-width: 100%;
+.page-content .size-large,
+.page-content .size-full,
+.entry-content .size-large,
+.entry-content .size-full,
+.entry-summary .size-large,
+.entry-summary .size-full,
+.entry-meta .size-large,
+.entry-meta .size-full {
+  margin-left: -21.42857%;
+  margin-right: -21.42857%;
+  max-width: 142.85714%;
 }
-
-.entry-content blockquote p {
-  max-width: 100%;
-  margin: 0;
+.page-content blockquote p:last-of-type,
+.entry-content blockquote p:last-of-type,
+.entry-summary blockquote p:last-of-type,
+.entry-meta blockquote p:last-of-type {
+  margin-bottom: 0;
 }
 
 .page-links {
