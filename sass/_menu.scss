@@ -21,8 +21,7 @@
 				display: block;
 				color: white;
 				font-family: $header-font;
-				font-size: 12px;
-				font-size: 1.2rem;
+				@include font-size(12);
 				text-transform: uppercase;
 			}
 
