@@ -215,10 +215,17 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 
+h1 {
+  margin: 0.5em 0 0.75em;
+  font-size: 48px;
+  font-size: 3rem;
+  font-weight: bold;
+}
 h1.site-title {
   display: inline-block;
   padding: 0.5em 1.5em;
   border: 5px solid #333333;
+  border-radius: 3px;
   font-size: 26px;
   font-size: 1.625rem;
   font-weight: bold;
@@ -226,9 +233,6 @@ h1.site-title {
 }
 h1.site-title a {
   color: #333333;
-}
-h1.site-title a:hover {
-  text-decoration: none;
 }
 h1.entry-title {
   margin: 0.75em 0 1em;
@@ -247,8 +251,55 @@ h1.widget-title {
 }
 
 h2 {
+  margin: 0.75em 0 0.75em;
+  font-size: 36px;
+  font-size: 2.25rem;
+}
+h2.post-title {
+  font-family: "Noto Serif", serif;
   font-size: 24px;
   font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+  margin: 0.5em 0 1em;
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+h3.comment-reply-title {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+h4 {
+  margin: 0.75em 0 0.5em;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h5 {
+  margin: 0.75em 0 0.5em;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: gray;
+}
+
+h6 {
+  margin: 0.75em 0 0.5em;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #cccccc;
 }
 
 hr {
@@ -301,9 +352,9 @@ dfn, cite, em, i {
 blockquote {
   margin: 1.5em 0;
   padding: 1.5em;
-  border: 3px solid grey;
+  border: 3px solid gray;
   font-style: italic;
-  color: grey;
+  color: gray;
 }
 
 address {
@@ -323,7 +374,9 @@ pre {
 }
 
 code, kbd, tt, var {
-  font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 abbr, acronym {
@@ -374,6 +427,14 @@ th {
   font-weight: bold;
 }
 
+caption, th, td {
+  padding: 0.5em;
+}
+
+mark, ins {
+  background-color: #eeeeee;
+}
+
 img {
   height: auto;
   /* Make sure images are scaled correctly. */
@@ -390,10 +451,6 @@ a:hover, a:active, a:focus {
   color: #6e6e6e;
 }
 a:hover {
-  text-decoration: underline;
-}
-
-a:visited {
   color: #888888;
 }
 
@@ -405,6 +462,13 @@ a:visited {
   font-size: 0.75rem;
   text-transform: uppercase;
   color: #666666;
+}
+
+.logged-in-as {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-style: italic;
+  text-align: center;
 }
 
 button,
@@ -568,9 +632,6 @@ textarea {
 .widget-container .widget-area .widget:nth-of-type(even) {
   margin-right: 0;
 }
-.widget-container a {
-  color: #bbbbbb;
-}
 
 .site-footer {
   padding: 1.5em 0;
@@ -582,9 +643,6 @@ textarea {
 }
 .site-footer .site-info {
   text-align: center;
-}
-.site-footer a {
-  color: #bbbbbb;
 }
 
 /* Homepage */
@@ -611,13 +669,10 @@ textarea {
 .post-thumbnail .post-title {
   position: absolute;
   bottom: 0;
-  padding: 0.5em 0;
+  margin: 0;
+  padding: 0.5em;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  font-family: "Noto Serif", serif;
-  color: white;
-  text-align: center;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
 }
 
 /* =Menu
@@ -625,7 +680,7 @@ textarea {
 .main-navigation {
   clear: both;
   display: block;
-  background-color: #333;
+  background-color: #333333;
 }
 .main-navigation ul {
   list-style: none;
@@ -645,11 +700,13 @@ textarea {
   font-size: 0.75rem;
   text-transform: uppercase;
 }
+.main-navigation ul li:hover > a {
+  color: #b3b3b3;
+}
 .main-navigation ul li:hover > ul {
   display: block;
 }
 .main-navigation ul .current_page_item a, .main-navigation ul .current-menu-item a {
-  font-weight: bold;
   color: #bbbbbb;
 }
 .main-navigation ul ul {
@@ -713,12 +770,20 @@ textarea {
 }
 .page-content .size-large,
 .page-content .size-full,
+.page-content .wp-caption .size-large,
+.page-content .wp-caption .size-full,
 .entry-content .size-large,
 .entry-content .size-full,
+.entry-content .wp-caption .size-large,
+.entry-content .wp-caption .size-full,
 .entry-summary .size-large,
 .entry-summary .size-full,
+.entry-summary .wp-caption .size-large,
+.entry-summary .wp-caption .size-full,
 .entry-meta .size-large,
-.entry-meta .size-full {
+.entry-meta .size-full,
+.entry-meta .wp-caption .size-large,
+.entry-meta .wp-caption .size-full {
   margin-left: -21.42857%;
   margin-right: -21.42857%;
   max-width: 142.85714%;
@@ -733,12 +798,6 @@ textarea {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
-}
-
-/* =Asides
------------------------------------------------ */
-.blog .format-aside .entry-title, .archive .format-aside .entry-title {
-  display: none;
 }
 
 /* =Media
@@ -762,7 +821,8 @@ textarea {
   margin: 1.5em auto 0;
   max-width: 100%;
 }
-.wp-caption .wp-caption-text {
+.wp-caption .wp-caption-text,
+.wp-caption .wp-caption-dd {
   margin: 0.5em 0 1.5em;
   text-align: left;
   font-size: 14px;

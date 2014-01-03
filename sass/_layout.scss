@@ -42,10 +42,6 @@
 			margin-right: 0;
 		}
 	}
-	
-	a {
-		color: $highlight-color;
-	}
 
 }
 
@@ -58,10 +54,6 @@
 	
 	.site-info {
 		text-align: center;
-	}
-	
-	a {
-		color: $highlight-color;
 	}
 }
 
@@ -92,13 +84,10 @@
 	.post-title {
 		position: absolute;
 		bottom: 0;
-		padding: $vspacing/3 0;
+		margin: 0;
+		padding: $vspacing/3;
 		width: 100%;
 		background-color: rgba(0,0,0,.5);
-		font-family: $base-font;
-		color: white;
-		text-align: center;
-		text-shadow: 0 2px 0 rgba(0,0,0,.5);
 	}
 
 }

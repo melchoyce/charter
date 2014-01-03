@@ -4,7 +4,7 @@
 .main-navigation {
 	clear: both;
 	display: block;
-	background-color: #333;
+	background-color: $base-color;
 
 	// first level
 	ul {
@@ -27,17 +27,14 @@
 
 			// link hover
 			&:hover {
-				> a { }
+				> a { color: darken(white, 30%); }
 				> ul { display: block; }
 			}
 
 		}
 
 		.current_page_item, .current-menu-item {
-			a {
-				font-weight: bold;
-				color: $highlight-color;
-			}
+			a { color: $highlight-color; }
 		}
 
 		// second level

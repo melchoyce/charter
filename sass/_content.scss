@@ -29,7 +29,9 @@
 	margin: $vspacing 15% 0;
 
 	.size-large,
-	.size-full {
+	.size-full,
+	.wp-caption .size-large,
+	.wp-caption .size-full {
 		$ratio: (150/700); // 700px is the default width of the container
 		margin-left: -100% * $ratio;
 		margin-right: -100% * $ratio;

@@ -22,7 +22,8 @@
 		margin: $vspacing auto 0;
 		max-width: 100%;
 	}
-	.wp-caption-text {
+	.wp-caption-text,
+	.wp-caption-dd {
 		margin: $vspacing/3 0 $vspacing;
 		text-align: left;
 		@include font-size(14);

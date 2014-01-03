@@ -15,20 +15,21 @@ h1,h2,h3,h4,h5,h6 {
 	clear: both;
 }
 h1 {
+	margin: $vspacing/3 0 $vspacing*.5;
+	@include font-size(48);
+	font-weight: bold;
+
 	&.site-title {
 		display: inline-block;
 		padding: $vspacing/3 $vspacing;
 		border: 5px solid $base-color;
+		border-radius: 3px;
 		@include font-size(26);
 		font-weight: bold;
 		text-transform: uppercase;
 	
 		a {
 			color: $base-color;
-			
-			&:hover {
-				text-decoration: none;
-			}
 		}
 	}
 	&.entry-title {
@@ -46,7 +47,46 @@ h1 {
 	}
 }
 h2 {
+	margin: $vspacing/2 0 $vspacing/2;
+	@include font-size(36);
+	
+	&.post-title {
+		font-family: $base-font;
+		@include font-size(24);
+		color: white;
+		text-align: center;
+		text-shadow: 0 2px 0 rgba(0,0,0,.5);
+	}
+}
+h3 {
+	margin: $vspacing/3 0 $vspacing/1.5;
 	@include font-size(24);
+	font-weight: bold;
+
+	&.comment-reply-title {
+		@include font-size(24);
+		font-weight: bold;
+		text-align: center;
+	}
+}
+h4 {
+	margin: $vspacing/2 0 $vspacing/3;
+	@include font-size(16);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+h5 {
+	margin: $vspacing/2 0 $vspacing/3;
+	@include font-size(14);
+	font-weight: bold;
+	text-transform: uppercase;
+	color: lighten($base-color, 30%);
+}
+h6 {
+	margin: $vspacing/2 0 $vspacing/3;
+	@include font-size(14);
+	font-weight: bold;
+	color: lighten($base-color, 60%);
 }
 
 hr {
@@ -108,7 +148,8 @@ pre {
 	max-width: 100%;
 }
 code, kbd, tt, var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	@include font-size(15);
 }
 abbr, acronym {
 	border-bottom: 1px dotted lighten($base-color, 20%);
@@ -148,6 +189,12 @@ table {
 th {
 	font-weight: bold;
 }
+caption, th, td {
+	padding: $vspacing/3;
+}
+mark, ins {
+	background-color: lighten($highlight-color, 20%);
+}
 img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
@@ -160,11 +207,8 @@ a {
 	text-decoration: none;
 	
 	&:hover {
-		text-decoration: underline;
+		color: darken($link-color, 20%);
 	}
-}
-a:visited {
-	color: $link-visited;
 }
 
 /* Specific type styles */
@@ -175,4 +219,10 @@ a:visited {
 	@include font-size(12);
 	text-transform: uppercase;
 	color: lighten($base-color, 20%);
+}
+
+.logged-in-as {
+	@include font-size(14);
+	font-style: italic;
+	text-align: center;
 }
