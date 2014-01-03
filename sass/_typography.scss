@@ -21,6 +21,7 @@ h1 {
 
 	&.site-title {
 		display: inline-block;
+		margin: 0;
 		padding: $vspacing/3 $vspacing;
 		border: 5px solid $base-color;
 		border-radius: 3px;
@@ -80,13 +81,13 @@ h5 {
 	@include font-size(14);
 	font-weight: bold;
 	text-transform: uppercase;
-	color: lighten($base-color, 30%);
+	color: lighten($text-color, 20%);
 }
 h6 {
 	margin: $vspacing/2 0 $vspacing/3;
 	@include font-size(14);
 	font-weight: bold;
-	color: lighten($base-color, 60%);
+	color: lighten($text-color, 50%);
 }
 
 hr {
@@ -132,7 +133,7 @@ blockquote {
 	padding: $vspacing;
 	border: 3px solid lighten($base-color, 30%);
 	font-style: italic;
-	color: lighten($base-color, 30%);
+	color: lighten($text-color, 20%);
 }
 address {
 	margin: 0 0 $vspacing;
@@ -193,7 +194,7 @@ caption, th, td {
 	padding: $vspacing/3;
 }
 mark, ins {
-	background-color: lighten($highlight-color, 20%);
+	background-color: lighten($base-light-color, 20%);
 }
 img {
 	height: auto; /* Make sure images are scaled correctly. */
@@ -225,4 +226,8 @@ a {
 	@include font-size(14);
 	font-style: italic;
 	text-align: center;
+}
+
+.form-allowed-tags {
+	@include font-size(14);	
 }

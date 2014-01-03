@@ -16,33 +16,11 @@
 	width: 100%;
 }
 
-/* Specific layout settings */
-
 .site-header {
 	clear: both;
 	padding: $vspacing*2 0;
 	background-color: lighten($base-color, 77%);
 	text-align: center;
-}
-
-.widget-container {
-	padding: $vspacing*2 0;
-	background-color: lighten($base-color, 10%);
-	font-family: $header-font;
-	color: white;
-	overflow: hidden;
-
-	.widget-area .widget {
-		float: left;
-		margin: 0 4% 4% 0;
-		width: 48%;
-		@include font-size(14);
-		
-		&:nth-of-type(even) {
-			margin-right: 0;
-		}
-	}
-
 }
 
 .site-footer {

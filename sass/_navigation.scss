@@ -4,14 +4,15 @@
 .site-main [class*="navigation"] {
 	clear: both;
 	overflow: hidden;
-	margin: 0 auto $vspacing;
 
-	.nav-links a[rel="prev"] {
+	.nav-links a[rel="prev"],
+	.nav-previous {
 		float: left;
 		width: 50%;
 	}
 
-	.nav-links a[rel="next"] {
+	.nav-links a[rel="next"],
+	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
@@ -19,8 +20,6 @@
 
 }
 
-.site-main article [class*="navigation"] {
-	padding: $vspacing/2;
-	max-width: 70%;
-	background-color: lighten($base-color, 78%);
+.nav-links {
+	
 }

@@ -1,19 +1,32 @@
 /* =Widgets
 ----------------------------------------------- */
 
-.widget {
-	margin: 0 0 $vspacing;
+.widget-container {
+	padding: $vspacing*2 0;
+	background-color: lighten($base-color, 10%);
+	font-family: $header-font;
+	color: white;
+	overflow: hidden;
 
-	/* Make sure select elements fit in widgets */
-	select {
-		max-width: 100%;
-	}
-
-	/* Search widget */
-	.widget-search .search-submit {
-		display: none;
+	.widget-area .widget {
+		float: left;
+		margin: 0 4% 4% 0;
+		width: 48%;
+		@include font-size(14);
+		
+		&:nth-of-type(even) {
+			margin-right: 0;
+		}
+		
+		/* Make sure select elements fit in widgets */
+		select {
+			max-width: 100%;
+		}
+	
+		/* Search widget */
+		.widget-search .search-submit {
+			display: none;
+		}
 	}
 
 }
-
-

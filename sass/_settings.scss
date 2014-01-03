@@ -8,11 +8,11 @@ $header-font: 'Noto Sans', sans-serif;
 
 // base color scheme
 $base-color: #333;
-$highlight-color: #bbb;
+$base-light-color: #bbb;
 
 $body-background: #fff;
 $text-color: darken($base-color, 10%);
-$link-color: $highlight-color;
+$link-color: $base-light-color;
 $link-visited: darken($link-color, 20%);
 
 // Supported Values for $layout:
