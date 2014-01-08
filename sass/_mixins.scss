@@ -20,3 +20,33 @@
 	font-size: $px-value * 1px; 
 	font-size: $rem-value * 1rem;
 }
+
+@mixin divet( $direction, $color, $width, $offset-y: 0, $offset-x: 0 ) {
+	content:"";
+	display: block; /* reduce the damage in FF3.0 */
+	position: absolute;
+	width: 0;
+	border-style: solid;
+	border-color: transparent $color;
+	
+	@if $direction == left {
+		top: $offset-y;
+		left: -$offset-x;
+		right: auto;
+		border-width: $width $width $width 0;
+
+	} @else if $direction == right {
+		top: $offset-y;
+		left: auto;
+		right: -$offset-x;
+		border-width: $width 0px $width $width;
+
+	} @else if $direction == top {
+		top: -$offset-y;
+		right: auto;
+		left: $offset-x;
+		border-color: $color transparent;
+		border-width: 0px $width $width $width;
+
+	}
+}

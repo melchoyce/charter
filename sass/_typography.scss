@@ -16,12 +16,20 @@ h1,h2,h3,h4,h5,h6 {
 }
 h1 {
 	&.site-title {
+		position: relative;
 		display: inline-block;
 		padding: $vspacing/3 $vspacing;
 		border: 5px solid $base-color;
 		@include font-size(26);
 		font-weight: bold;
 		text-transform: uppercase;
+
+		&:before {
+			@include divet( left, $base-color, 40px, -5px, 45px );
+		}
+		&:after {
+			@include divet( right, $base-color, 40px, -5px, 45px );
+		}
 	
 		a {
 			color: $base-color;

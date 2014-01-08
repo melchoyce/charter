@@ -151,13 +151,13 @@ a img {
 .alignleft {
   display: inline;
   float: left;
-  margin-right: 1.5em;
+  margin-right: 40px;
 }
 
 .alignright {
   display: inline;
   float: right;
-  margin-left: 1.5em;
+  margin-left: 40px;
 }
 
 .aligncenter {
@@ -216,13 +216,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1.site-title {
+  position: relative;
   display: inline-block;
-  padding: 0.5em 1.5em;
+  padding: 13.33333px 40px;
   border: 5px solid #333333;
   font-size: 26px;
   font-size: 1.625rem;
   font-weight: bold;
   text-transform: uppercase;
+}
+h1.site-title:before {
+  content: "";
+  display: block;
+  /* reduce the damage in FF3.0 */
+  position: absolute;
+  width: 0;
+  border-style: solid;
+  border-color: transparent #333333;
+  top: -5px;
+  left: -45px;
+  right: auto;
+  border-width: 40px 40px 40px 0;
+}
+h1.site-title:after {
+  content: "";
+  display: block;
+  /* reduce the damage in FF3.0 */
+  position: absolute;
+  width: 0;
+  border-style: solid;
+  border-color: transparent #333333;
+  top: -5px;
+  left: auto;
+  right: -45px;
+  border-width: 40px 0px 40px 40px;
 }
 h1.site-title a {
   color: #333333;
@@ -231,7 +258,7 @@ h1.site-title a:hover {
   text-decoration: none;
 }
 h1.entry-title {
-  margin: 0.75em 0 1em;
+  margin: 20px 0 26.66667px;
   text-align: center;
   font-size: 36px;
   font-size: 2.25rem;
@@ -239,7 +266,7 @@ h1.entry-title {
   letter-spacing: -.05em;
 }
 h1.widget-title {
-  margin-bottom: 1.5em;
+  margin-bottom: 40px;
   font-size: 13px;
   font-size: 0.8125rem;
   font-weight: bold;
@@ -255,13 +282,13 @@ hr {
   background-color: #ccc;
   border: 0;
   height: 1px;
-  margin-bottom: 1.5em;
+  margin-bottom: 40px;
 }
 
 /* Text elements */
 p {
   line-height: 2;
-  margin-bottom: 1.5em;
+  margin-bottom: 40px;
 }
 
 ul, ol {
@@ -279,7 +306,7 @@ ol {
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: 1.5em;
+  margin-left: 40px;
 }
 
 dt {
@@ -287,7 +314,7 @@ dt {
 }
 
 dd {
-  margin: 0 1.5em 1.5em;
+  margin: 0 40px 40px;
 }
 
 b, strong {
@@ -299,15 +326,15 @@ dfn, cite, em, i {
 }
 
 blockquote {
-  margin: 1.5em 0;
-  padding: 1.5em;
+  margin: 40px 0;
+  padding: 40px;
   border: 3px solid grey;
   font-style: italic;
   color: grey;
 }
 
 address {
-  margin: 0 0 1.5em;
+  margin: 0 0 40px;
 }
 
 pre {
@@ -366,7 +393,7 @@ figure {
 }
 
 table {
-  margin: 0 0 1.5em;
+  margin: 0 0 40px;
   width: 100%;
 }
 
@@ -546,13 +573,13 @@ textarea {
 /* Specific layout settings */
 .site-header {
   clear: both;
-  padding: 3em 0;
+  padding: 80px 0;
   background-color: #f7f7f7;
   text-align: center;
 }
 
 .widget-container {
-  padding: 3em 0;
+  padding: 80px 0;
   background-color: #4d4d4d;
   font-family: "Noto Sans", sans-serif;
   color: white;
@@ -573,7 +600,7 @@ textarea {
 }
 
 .site-footer {
-  padding: 1.5em 0;
+  padding: 40px 0;
   background-color: #333333;
   font-family: "Noto Sans", sans-serif;
   font-size: 14px;
@@ -589,7 +616,7 @@ textarea {
 
 /* Homepage */
 .content-area {
-  padding: 3em 0;
+  padding: 80px 0;
   clear: both;
 }
 
@@ -611,7 +638,7 @@ textarea {
 .post-thumbnail .post-title {
   position: absolute;
   bottom: 0;
-  padding: 0.5em 0;
+  padding: 13.33333px 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   font-family: "Noto Serif", serif;
@@ -631,14 +658,15 @@ textarea {
   list-style: none;
   margin: 0 auto;
   position: relative;
-  padding: 0.75em 0;
 }
 .main-navigation ul li {
+  position: relative;
   display: inline-block;
-  margin-right: 1.5em;
+  margin-right: 20px;
 }
 .main-navigation ul li a {
   display: block;
+  padding: 20px 0;
   color: white;
   font-family: "Noto Sans", sans-serif;
   font-size: 12px;
@@ -656,13 +684,20 @@ textarea {
   display: none;
   float: left;
   position: absolute;
-  top: 2.25em;
+  top: 60px;
   left: 0;
-  z-index: 99999;
+  z-index: 25;
+  padding: 10px 0;
   background-color: #444;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
+.main-navigation ul ul li {
+  display: block;
+  margin: 0;
+}
 .main-navigation ul ul li a {
+  display: block;
+  padding: 10px 20px;
   width: 200px;
 }
 .main-navigation ul ul ul {
@@ -689,7 +724,7 @@ textarea {
 /* =Content
 ----------------------------------------------- */
 .hentry {
-  margin: 0 0 1.5em;
+  margin: 0 0 40px;
 }
 
 .byline,
@@ -702,14 +737,14 @@ textarea {
 }
 
 .entry-meta {
-  margin-top: 3em;
+  margin-top: 80px;
 }
 
 .page-content,
 .entry-content,
 .entry-summary,
 .entry-meta {
-  margin: 1.5em 15% 0;
+  margin: 40px 15% 0;
 }
 .page-content .size-large,
 .page-content .size-full,
@@ -732,7 +767,7 @@ textarea {
 
 .page-links {
   clear: both;
-  margin: 0 0 1.5em;
+  margin: 0 0 40px;
 }
 
 /* =Asides
@@ -753,17 +788,17 @@ textarea {
 }
 
 .wp-caption {
-  margin-bottom: 1.5em;
+  margin-bottom: 40px;
   max-width: 100%;
   border: none;
 }
 .wp-caption img[class*="wp-image-"] {
   display: block;
-  margin: 1.5em auto 0;
+  margin: 40px auto 0;
   max-width: 100%;
 }
 .wp-caption .wp-caption-text {
-  margin: 0.5em 0 1.5em;
+  margin: 13.33333px 0 40px;
   text-align: left;
   font-size: 14px;
   font-size: 0.875rem;
@@ -771,7 +806,7 @@ textarea {
 }
 
 .gallery {
-  margin: 1.5em auto 0 !important;
+  margin: 40px auto 0 !important;
 }
 .gallery + p {
   margin-top: 0;
@@ -788,7 +823,7 @@ textarea {
   margin-bottom: 0;
 }
 .gallery .gallery-item .gallery-caption {
-  margin: 0.5em 0 1.5em;
+  margin: 13.33333px 0 40px;
   text-align: center;
   font-size: 14px;
   font-size: 0.875rem;
@@ -892,7 +927,7 @@ object {
 .site-main [class*="navigation"] {
   clear: both;
   overflow: hidden;
-  margin: 0 auto 1.5em;
+  margin: 0 auto 40px;
 }
 .site-main [class*="navigation"] .nav-links a[rel="prev"] {
   float: left;
@@ -905,7 +940,7 @@ object {
 }
 
 .site-main article [class*="navigation"] {
-  padding: 0.75em;
+  padding: 20px;
   max-width: 70%;
   background-color: #fafafa;
 }
@@ -919,7 +954,7 @@ object {
 /* =Widgets
 ----------------------------------------------- */
 .widget {
-  margin: 0 0 1.5em;
+  margin: 0 0 40px;
   /* Make sure select elements fit in widgets */
   /* Search widget */
 }

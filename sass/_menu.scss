@@ -11,14 +11,15 @@
 		list-style: none;
 		margin: 0 auto;
 		position: relative;
-		padding: $vspacing/2 0;
 
 		li {
+			position: relative;
 			display: inline-block;
-			margin-right: $vspacing;
+			margin-right: $vspacing/2;
 
 			a {
 				display: block;
+				padding: $vspacing/2 0;
 				color: white;
 				font-family: $header-font;
 				@include font-size(12);
@@ -45,9 +46,10 @@
 			display: none;
 			float: left;
 			position: absolute;
-				top: $vspacing*1.5;
-				left: 0;
-			z-index: 99999;
+			top: 60px;
+			left: 0;
+			z-index: 25;
+			padding: $vspacing/4 0;
 			
 			background-color: #444;
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -57,8 +59,14 @@
 			}
 
 			li {
+				display: block;
+				margin: 0;
+
 				a {
+					display: block;
+					padding: $vspacing/4 $vspacing/2;
 					width: 200px;
+
 					&:hover {};
 				}
 			}
