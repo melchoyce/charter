@@ -20,6 +20,7 @@ h1 {
 	font-weight: bold;
 
 	&.site-title {
+		position: relative;
 		display: inline-block;
 		margin: 0;
 		padding: $vspacing/3 $vspacing;
@@ -28,6 +29,13 @@ h1 {
 		@include font-size(26);
 		font-weight: bold;
 		text-transform: uppercase;
+
+		&:before {
+			@include divet( left, $base-color, 40px, -5px, 45px );
+		}
+		&:after {
+			@include divet( right, $base-color, 40px, -5px, 45px );
+		}
 	
 		a {
 			color: $base-color;
