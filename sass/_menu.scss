@@ -15,14 +15,15 @@
 		li {
 			position: relative;
 			display: inline-block;
-			margin-right: $vspacing/2;
+			margin-right: $vspacing/1.25;
 
 			a {
 				display: block;
 				padding: $vspacing/2 0;
-				color: white;
 				font-family: $header-font;
 				@include font-size(12);
+				font-weight: 600;
+				color: white;
 				text-transform: uppercase;
 			}
 

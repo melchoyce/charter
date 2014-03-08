@@ -120,12 +120,12 @@ a img {
 .comment-content:before,
 .site-header:before,
 .site-content:before,
-.site-footer:before, .gallery:before, .clear:after,
+.site-footer:before, .gallery:before, .site-main [class*="navigation"]:before, .clear:after,
 .entry-content:after,
 .comment-content:after,
 .site-header:after,
 .site-content:after,
-.site-footer:after, .gallery:after {
+.site-footer:after, .gallery:after, .site-main [class*="navigation"]:after {
   content: "";
   display: table;
 }
@@ -134,7 +134,7 @@ a img {
 .comment-content:after,
 .site-header:after,
 .site-content:after,
-.site-footer:after, .gallery:after {
+.site-footer:after, .gallery:after, .site-main [class*="navigation"]:after {
   clear: both;
 }
 
@@ -225,42 +225,15 @@ h1.site-title {
   position: relative;
   display: inline-block;
   margin: 0;
-  padding: 13.33333px 40px;
-  border: 5px solid #333333;
-  border-radius: 3px;
   font-size: 26px;
   font-size: 1.625rem;
   font-weight: bold;
   text-transform: uppercase;
 }
-h1.site-title:before {
-  content: "";
-  display: block;
-  /* reduce the damage in FF3.0 */
-  position: absolute;
-  width: 0;
-  border-style: solid;
-  border-color: transparent #333333;
-  top: -5px;
-  left: -45px;
-  right: auto;
-  border-width: 40px 40px 40px 0;
-}
-h1.site-title:after {
-  content: "";
-  display: block;
-  /* reduce the damage in FF3.0 */
-  position: absolute;
-  width: 0;
-  border-style: solid;
-  border-color: transparent #333333;
-  top: -5px;
-  left: auto;
-  right: -45px;
-  border-width: 40px 0px 40px 40px;
-}
 h1.site-title a {
+  padding: 13.33333px 40px;
   color: #333333;
+  border: 5px solid #333333;
 }
 h1.entry-title {
   margin: 20px 0 26.66667px;
@@ -380,7 +353,7 @@ dfn, cite, em, i {
 blockquote {
   margin: 40px 0;
   padding: 40px;
-  border: 3px solid grey;
+  border: 3px solid gray;
   font-style: italic;
   color: #4d4d4d;
 }
@@ -637,7 +610,7 @@ textarea {
 
 .site-header {
   clear: both;
-  padding: 80px 0;
+  padding: 50px 0;
   background-color: #f7f7f7;
   text-align: center;
 }
@@ -657,7 +630,6 @@ textarea {
 /* Homepage */
 .content-area {
   padding: 80px 0;
-  clear: both;
 }
 
 .post-thumbnail {
@@ -699,15 +671,16 @@ textarea {
 .main-navigation ul li {
   position: relative;
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 32px;
 }
 .main-navigation ul li a {
   display: block;
   padding: 20px 0;
-  color: white;
   font-family: "Noto Sans", sans-serif;
   font-size: 12px;
   font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
   text-transform: uppercase;
 }
 .main-navigation ul li:hover > a {
@@ -974,7 +947,6 @@ object {
 ----------------------------------------------- */
 .site-main [class*="navigation"] {
   clear: both;
-  overflow: hidden;
 }
 .site-main [class*="navigation"] .nav-links a[rel="prev"],
 .site-main [class*="navigation"] .nav-previous {
@@ -986,6 +958,12 @@ object {
   float: right;
   text-align: right;
   width: 50%;
+}
+.site-main [class*="navigation"] .nav-links .nav-previous a,
+.site-main [class*="navigation"] .nav-links .nav-next a {
+  padding: 13.33333px 20px;
+  border: 5px solid #bbbbbb;
+  width: auto;
 }
 
 /* =Comments

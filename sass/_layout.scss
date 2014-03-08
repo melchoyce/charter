@@ -18,7 +18,7 @@
 
 .site-header {
 	clear: both;
-	padding: $vspacing*2 0;
+	padding: $vspacing*1.25 0;
 	background-color: lighten($base-color, 77%);
 	text-align: center;
 }
@@ -39,7 +39,6 @@
 
 .content-area {
 	padding: $vspacing*2 0;
-	clear: both;
 }
 
 .post-thumbnail {

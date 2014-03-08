@@ -2,9 +2,9 @@
 ----------------------------------------------- */
 
 .site-main [class*="navigation"] {
+	@extend %clearfix;
 	clear: both;
-	overflow: hidden;
-
+	
 	.nav-links a[rel="prev"],
 	.nav-previous {
 		float: left;
@@ -18,8 +18,11 @@
 		width: 50%;
 	}
 
-}
+	.nav-links .nav-previous a,
+	.nav-links .nav-next a {
+		padding: $vspacing/3 $vspacing/2;
+		border: 5px solid $base-light-color;
+		width: auto;
+	}
 
-.nav-links {
-	
 }

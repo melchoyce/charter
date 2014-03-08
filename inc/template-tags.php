@@ -54,11 +54,13 @@ function charter_post_nav() {
 	?>
 	<nav class="navigation post-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'charter' ); ?></h1>
-		<div class="nav-links">
-
-			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> Previous', 'Previous post link', 'charter' ) ); ?>
-			<?php next_post_link( '%link', _x( 'Next <span class="meta-nav">&rarr;</span>', 'Next post link',     'charter' ) ); ?>
-
+		<div class="nav-links">		
+			<div class="nav-previous">
+				<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> Previous Post', 'Previous post link', 'charter' ) ); ?>
+			</div>
+			<div class="nav-next">
+				<?php next_post_link( '%link', _x( 'Next Post <span class="meta-nav">&rarr;</span>', 'Next post link',     'charter' ) ); ?>
+			</div>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
